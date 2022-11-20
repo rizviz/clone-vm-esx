@@ -4,8 +4,11 @@
 This tool automates clonning of a VM without the need of a VCenter by using the VMWare's VSphere/ESX command line interface. 
 
 ## Description
-ESXi is built on the Linux kernel. And that gives us a lot of power and flexibility . All you need is ssh shell access and you can pretty much perform any task as you would on a linux box. This tool automates the tasks of gathering source VM's information like : 
-* datastore location,
+Cloning a VM usually requires VCenter based on official documentation which means additional license (cost). This is a 'hack' way of cloning a template VM to a new VM in a fast, cost effective and quick fashion. You can run  multiple clone processes to automate creating of multiple VMs from a single source template. 
+ESXi is built on the Linux kernel. And that gives us a lot of power and flexibility . All you need is ssh shell access and you can pretty much perform any task as you would on a linux box. 
+Cloning manually through ESXi used to be really cumbursome and tedious process. This tool automates the tasks of gathering source VM's information like : 
+
+* datastore location
 * creating target VM folder
 * copying and customizing target VM files
 * registering newly cloned VM with ESXi
@@ -22,11 +25,13 @@ ESXi is built on the Linux kernel. And that gives us a lot of power and flexibil
 2. Copy the shell script to ESX host through scp ` cd clone-vm-esx; scp  clone-vm-esx.sh root@esxihost.local `
 3. Login to ESXi host with ssh
 3. Execute the shell script on the ESXi shell as : ` sh clone-vm.sh <source_vm_name> <target_vm_name>`
-4. Example:  ` sh clone-vm.sh ub22-template-v2 k8snode01 `
+4. Example:  ` sh clone-vm.sh ub22-template-v2 k8snode01 ` 
+
+Once the cloning is complete , power up new VM and select "Copied the VM" from the pop up menu on the ESXi client. Don't forget to change the hostname and IP of the target VM to avoid conflict with source VM configuration
 
 ### PreRequisites
 
-Following are needed before installing : ESX SSH service enabled, SSH username/password , enough disk space in the datastore for cloning the VM. 
+Following are needed before installing : ESX SSH service enabled, SSH username/password , a template VM (or for that matter any VM you'd want to clone) and enough disk space in the datastore for cloning the VM. 
 
 ### Notes
 * Cloning process is dependent on disk size and CPU/Mem of the ESX host. e.g. 8GB disk VM will take about 3-4 minutes but 32GB will take longer. 
