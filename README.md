@@ -11,12 +11,13 @@ ESXi is built on the Linux kernel. And that gives us a lot of power and flexibil
 * registering newly cloned VM with ESXi
 
 ## Steps
-### Method 1: Automatic
+### Method 1: Automatic download to ESXi
 1. Login to ESXi with ssh 
-2. Run : ` wget -O clone-vm-esx.sh https://raw.githubusercontent.com/rizviz/clone-vm-esx/main/clone-vm.sh --no-check
+2. Direct download to ESX shell : ` wget -O clone-vm-esx.sh https://raw.githubusercontent.com/rizviz/clone-vm-esx/main/clone-vm.sh --no-check
 -certificate ; chmod +x clone-vm-esx.sh `
+3. Clone desired VM e.g. : `  sh clone-vm.sh ub22-template-v2 k8snode01 `
 
-### Method 2: Manual 
+### Method 2: Manual download first
 1. Clone the repo ` git clone https://github.com/rizviz/clone-vm-esx.git `
 2. Copy the shell script to ESX host through scp ` cd clone-vm-esx; scp  clone-vm-esx.sh root@esxihost.local `
 3. Login to ESXi host with ssh
