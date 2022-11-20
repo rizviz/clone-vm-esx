@@ -12,6 +12,9 @@ ESXi is built on the Linux kernel. And that gives us a lot of power and flexibil
 
 ## Steps
 ### Method 1: Automatic
+1. Login to ESXi with ssh 
+2. Run : ` wget -O clone-vm-esx.sh https://raw.githubusercontent.com/rizviz/clone-vm-esx/main/clone-vm.sh --no-check
+-certificate ; chmod +x clone-vm-esx.sh `
 
 ### Method 2: Manual 
 1. Clone the repo ` git clone https://github.com/rizviz/clone-vm-esx.git `
