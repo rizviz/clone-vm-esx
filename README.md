@@ -13,21 +13,22 @@ ESXi is built on the Linux kernel. And that gives us a lot of power and flexibil
 ## Getting Started
 1. Clone the repo
 2. Copy the shell script to ESX host through scp
-3. Execute the shell script as : ` sh clone-vm.sh <source_vm_name> <target_vm_name>
-                            Example:  ` sh clone-vm.sh ub22-template-v2 k8snode01"
+3. Execute the shell script as : ` sh clone-vm.sh <source_vm_name> <target_vm_name>`
+4. Example:  ` sh clone-vm.sh ub22-template-v2 k8snode01 `
+
 ### PreRequisites
 
 Following are needed before installing : ESX SSH service enabled, SSH username/password , enough disk space in the datastore for cloning the VM. 
 
 ### Notes
 * Cloning process is dependent on disk size and CPU/Mem of the ESX host
-## Authors
 
+
+
+## Authors
 @rizviz
 
-
 ## License
-
 This project is licensed under the Apache License - see the LICENSE.md file for details
 
 ## Acknowledgments
