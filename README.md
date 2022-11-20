@@ -5,10 +5,12 @@ This tool automates clonning of a VM without the need of a VCenter by using the 
 
 ## Description
 Cloning a VM usually requires VCenter based on official documentation which means additional license (cost). This is a 'hack' way of cloning a template VM to a new VM in a fast, cost effective and quick fashion. You can run  multiple clone processes to automate creating of multiple VMs from a single source template. 
-ESXi is built on the Linux kernel. And that gives us a lot of power and flexibility . All you need is ssh shell access and you can pretty much perform any task as you would on a linux box. 
-Cloning manually through ESXi used to be really cumbursome and tedious process. This tool automates the tasks of gathering source VM's information like : 
 
-* datastore location
+ESXi is built on the Linux kernel. And that gives us a lot of power and flexibility . All you need is ssh shell access and you can pretty much perform any task as you would on a linux box. 
+
+Cloning manually through ESXi GUI can be really cumbersome and time consuming process. This tool automates those tasks using ESX cli . It takes care of : 
+
+* Gathering VM datastore location
 * creating target VM folder
 * copying and customizing target VM files
 * registering newly cloned VM with ESXi
@@ -27,7 +29,7 @@ Cloning manually through ESXi used to be really cumbursome and tedious process. 
 3. Execute the shell script on the ESXi shell as : ` sh clone-vm.sh <source_vm_name> <target_vm_name>`
 4. Example:  ` sh clone-vm.sh ub22-template-v2 k8snode01 ` 
 
-Once the cloning is complete , power up new VM and select "Copied the VM" from the pop up menu on the ESXi client. Don't forget to change the hostname and IP of the target VM to avoid conflict with source VM configuration
+Once the cloning is complete , power up new VM and select "I Copied it" from the pop up menu on the ESXi client. Don't forget to change the hostname and IP of the target VM to avoid conflict with source VM configuration
 
 ### PreRequisites
 
